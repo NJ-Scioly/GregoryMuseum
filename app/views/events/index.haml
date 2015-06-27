@@ -1,0 +1,20 @@
+%p#notice= notice
+%h1 Listing Events
+%table.ui.table
+  %thead
+    %tr
+      %th Start Date
+      %th End Date
+      %th Name
+      %th{:colspan => "3"}
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.date_start
+        %td= event.date_end
+        %td= event.name
+        %td= link_to 'Show', event, class: "ui blue button"
+        %td= link_to 'Edit', edit_event_path(event), class: "ui yellow button"
+        %td= link_to 'Remove', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui red button"
+%br/
+= link_to 'New Event', new_event_path, class: "ui green button"

@@ -1,0 +1,16 @@
+.row
+  .ui.menu.navbar.inverted.attached
+    %a.brand.item{:href => root_path } Gregory Museum
+    %a.item{:href => root_path } About
+    %a.item{:href => events_path } Events
+    .right.menu
+      - if admin_signed_in?
+        .ui.dropdown.item
+          = current_admin.email
+          %i.dropdown.icon
+          .menu
+            .item
+              =link_to "Edit account", edit_admin_registration_path, style: "color:black"
+            .ui.divider
+            .item
+              =link_to('Logout', destroy_admin_session_path, :method => :delete, style: "color:black")
