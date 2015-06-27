@@ -3,9 +3,11 @@
     %a.brand.item{:href => root_path } Gregory Museum
     %a.item{:href => root_path } About
     %a.item{:href => events_path } Events
+    - if admin_signed_in?
+      %a.item{:href => admin_root_path } Admin Panel
     .right.menu
       - if admin_signed_in?
-        .ui.dropdown.item
+        .ui.simple.dropdown.item
           = current_admin.email
           %i.dropdown.icon
           .menu

@@ -1,0 +1,28 @@
+- if flash[:notice]
+  .sixteen.wide.column.ui.info.message
+    %i.close.icon
+    .header
+      Notice
+    %p
+      =flash[:notice]
+- if flash[:error]
+  .sixteen.wide.column.ui.negative.message
+    %i.close.icon
+    .header
+      Notice
+    %p
+      =flash[:error]
+- if flash[:warning]
+  .sixteen.wide.column.ui.yellow.message
+    %i.close.icon
+    .header
+      Notice
+    %p
+      =flash[:warning]
+- if flash[:alert]
+  .sixteen.wide.column.ui.negative.message
+    %i.close.icon
+    .header
+      Notice
+    %p
+      =flash[:alert]

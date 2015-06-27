@@ -1,6 +1,11 @@
 %p#notice= notice
 %h1 Listing Events
-%table.ui.table
+= month_calendar previous_link: semantic_previous_link, next_link: semantic_next_link, table: {class: "ui calendar table"}, events: @events do |date, events|
+  = date.mday
+  %br
+  - events.each do |event|
+    = event.name
+-# %table.ui.table
   %thead
     %tr
       %th Start Date
@@ -13,8 +18,4 @@
         %td= event.date_start
         %td= event.date_end
         %td= event.name
-        %td= link_to 'Show', event, class: "ui blue button"
-        %td= link_to 'Edit', edit_event_path(event), class: "ui yellow button"
-        %td= link_to 'Remove', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui red button"
 %br/
-= link_to 'New Event', new_event_path, class: "ui green button"
