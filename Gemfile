@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'unicorn'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -40,6 +41,15 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 # calendar
 gem 'simple_calendar', git: 'git@github.com:TuxmAL/simple_calendar.git'
+
+#deployment
+gem 'capistrano', '~> 3.4.0'
+group :development do
+  gem 'capistrano-rails', '~> 1.1.1'
+end
+gem'capistrano-bundler'
+gem'capistrano-rbenv'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
